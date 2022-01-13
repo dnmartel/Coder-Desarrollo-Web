@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./imagenes/favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Contacto</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="./imagenes/logoheader.png" alt="Logo Marca X">
+            <nav class="nav-header">
+                <input type="checkbox" id="menu-hamb">
+                <label for="menu-hamb">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#facd49" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+                </label>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="sobremi.html">Sobre mi</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-contacto flex-column">
+        <div class="title-misc">
+            <h1>Contacto
+                <hr>
+            </h1>
+        </div>
+
+        <section class="section-form flex-column">
+            <!-- Acá va el formulario -->
+            <form action="POST">
+                <input type="text" value="Nombre y Apellido" name="name" id="name-form">
+                <input type="email" name="email" value="Correo" id="email-form">
+                <textarea name="textarea-form" id="textarea-form" cols="30" rows="10">Mensaje</textarea>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <a href="https://behance.net">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-behance"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#facd49" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M3 18v-12h4.5a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-4.5" />
+                    <line x1="3" y1="12" x2="7.5" y2="12" />
+                    <path d="M14 13h7a3.5 3.5 0 0 0 -7 0v2a3.5 3.5 0 0 0 6.64 1" />
+                    <line x1="16" y1="6" x2="19" y2="6" />
+                </svg>
+            </a>
+            <a href="https://linkedin.com">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#facd49" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <line x1="8" y1="11" x2="8" y2="16" />
+                    <line x1="8" y1="8" x2="8" y2="8.01" />
+                    <line x1="12" y1="16" x2="12" y2="11" />
+                    <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+                </svg>
+            </a>
+        </div>
+        <p class="p-footer">Todos los derechos reservados</p>
+    </footer>
+
+</body>
+
+</html>
