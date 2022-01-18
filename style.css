@@ -13,8 +13,12 @@
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none;
     font-family: 'Karla', sans-serif;
+}
+
+/* Refuerzo especifidad por BS */
+a {
+    text-decoration: none;
 }
 
 /* ALGUNAS REGLAS GENERALES */
@@ -58,7 +62,7 @@ header div {
 }
 
 /* Tamaño logo */
-header div a img {
+.tamaño-logo {
     margin: 1em 0 1em 1em;
     width: 8em;
     display: inline-block;
@@ -70,21 +74,29 @@ header div a img {
 }
 
 /* Fuerzo la horizontalidad */
-nav.nav-header ul li {
+.nav-menu li {
     display: inline-block;
 }
 
+ul.nav-menu {
+    margin-bottom: 0;
+}
+
 /* Separación inter-links */
-.nav-header ul li a {
+.nav-menu li a {
     color: #161616;
     border-bottom: 0px solid #facd49;
     margin: 0 1.5em;
 }
 
 /* Hover navbar */
-nav.nav-header ul li a:hover {
+.nav-menu li a:hover {
     color: #facd49;
     border-bottom: 1px solid #facd49;
+}
+
+li a.active-page {
+    color: #facd49;
 }
 
 /* Media query para Mobile - Menu hamburguesa */
@@ -155,45 +167,6 @@ nav.nav-header ul li a:hover {
 
 
 /* INDEX MAIN */
-
-main.main-carrousel {
-    margin: 9em 0;
-    min-height: var(--size-img-carrousel);
-    display: flex;
-    justify-content: center;
-}
-
-div.carrousel {
-    width: 80%;
-    display: flex;
-    flex-flow: row wrap;
-    row-gap: 1em;
-    align-self: center;
-    justify-content: space-evenly;
-}
-
-.carrousel img {
-    height: var(--size-img-carrousel);
-    transition: all 0.5s;
-}
-
-/* Hover imagenes*/
-.carrousel img:hover {
-    transform: scale(0.95);
-}
-
-/* Ajustes para mobile y tablet */
-@media only screen and (max-width: 968px) {
-
-    main.main-carrousel {
-        margin: 6em 0;
-    }
-
-    div.carrousel {
-        width: 95%;
-    }
-}
-
 /* FIN MAIN INDEX */
 
 
