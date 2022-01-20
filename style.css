@@ -92,7 +92,7 @@ ul.nav-menu {
 /* Hover navbar */
 .nav-menu li a:hover {
     color: #facd49;
-    border-bottom: 1px solid #facd49;
+    border-bottom: 1.5px solid #facd49;
 }
 
 li a.active-page {
@@ -187,10 +187,27 @@ footer {
 footer a svg {
     margin: .75em .75em;
     height: 1.8em;
+    border-bottom: 1.5px solid transparent;
 }
 
 .p-footer {
     font-size: .75em;
+}
+
+.p-footer::after {
+    content: "\2122";
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+
+.p-footer:hover::after {
+    opacity: 100%;
+}
+
+footer a svg:hover {
+    margin: .75em .75em;
+    height: 1.8em;
+    border-bottom: 1.5px solid #facd49;
 }
 
 /* FIN FOOTER */
@@ -287,13 +304,23 @@ a.a-proyect {
     font-size: .9em;
     color: #161616;
     text-transform: uppercase;
-    letter-spacing: 0em;
-    transition: all .5s;
+    letter-spacing: 0.05em;
     margin-left: 1em;
+    transition: all .5s;
 }
 
+a.a-proyect::before {
+    content: "\25BA";
+    color: black;
+    transition: all .5s;
+}
+
+
+
+a.a-proyect:hover::before,
 a.a-proyect:hover {
-    letter-spacing: 0.05em;
+    margin-right: .1em;
+    letter-spacing: 0.07em;
 }
 
 img.pro1:hover~.div-pro1,
@@ -455,7 +482,8 @@ main.main-clientes section div img {
     font-weight: 500;
 }
 
-.sector1 figcaption, .sector3 figcaption {
+.sector1 figcaption,
+.sector3 figcaption {
     margin-top: .5em;
     opacity: 0%;
     transition: all 2s ease;
@@ -481,14 +509,49 @@ main.main-clientes section div img {
     user-select: none;
 }
 
-.sector4 p:hover {
+.sector4 p:nth-child(1) {
+    animation: up-colored 2s ease 0s;
+}
+
+.sector4 p:nth-child(2) {
+    animation: up-colored 2s ease 2s;
+}
+
+.sector4 p:nth-child(3) {
+    animation: up-colored 2s ease 4s;
+}
+
+.sector4 p:nth-child(4) {
+    animation: up-colored 2s ease 6s;
+}
+
+@keyframes up-colored {
+
+    0% {
+        color: #161616;
+        transform: translateY(0);
+    }
+
+    50% {
+        color: #facd49;
+        transform: translateY(-1em);
+    }
+
+    100% {
+        color: #161616;
+        transform: translateY(0);
+    }
+}
+
+.sector4 p:nth-child(-n+4):hover {
     color: #facd49;
     transform: translateY(-1em);
 }
 
 @media only screen and (max-width: 480px) {
 
-    .sector1 figcaption, .sector3 figcaption {
+    .sector1 figcaption,
+    .sector3 figcaption {
         display: none;
     }
 
@@ -530,7 +593,8 @@ main.main-clientes section div img {
 
 @media only screen and (min-width: 481px) and (max-width: 967px) {
 
-    .sector1 figcaption, .sector3 figcaption {
+    .sector1 figcaption,
+    .sector3 figcaption {
         display: none;
     }
 
@@ -579,8 +643,10 @@ main.main-clientes section div img {
 
 }
 
-@media only screen and (min-width: 967px) {
-    .sector1:hover figcaption, .sector3:hover figcaption {
+@media only screen and (min-width: 968px) {
+
+    .sector1:hover figcaption,
+    .sector3:hover figcaption {
         opacity: 100%;
     }
 }
