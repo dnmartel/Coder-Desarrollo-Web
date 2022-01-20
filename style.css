@@ -526,7 +526,6 @@ main.main-clientes section div img {
 }
 
 @keyframes up-colored {
-
     0% {
         color: #161616;
         transform: translateY(0);
