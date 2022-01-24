@@ -239,15 +239,25 @@ footer a svg:hover {
 
 /* Ajustes para mobile y tablet */
 
-@media only screen and (min-width: 1200px) and (max-width: 1650px) {
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
 
     .carrousel {
-        width: 95%;
-        min-height: 400px;
+        width: 90%;
     }
 
-    .button img {
+    .carrousel img {
         height: 420px;
+    }
+}
+
+@media only screen and (min-width: 1450px) and (max-width: 1650px) {
+
+    .carrousel {
+        width: 90%;
+    }
+
+    .carrousel img {
+        height: 450px;
     }
 }
 
