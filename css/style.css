@@ -212,11 +212,6 @@ footer a svg:hover {
     justify-content: center;
 }
 
-.button{
-    border: none;
-    background-color: transparent;
-}
-
 .carrousel {
     width: 90%;
     display: flex;
@@ -242,7 +237,7 @@ footer a svg:hover {
 @media only screen and (min-width: 1200px) and (max-width: 1450px) {
 
     .carrousel {
-        width: 90%;
+        width: 95%;
     }
 
     .carrousel img {
@@ -253,7 +248,7 @@ footer a svg:hover {
 @media only screen and (min-width: 1450px) and (max-width: 1650px) {
 
     .carrousel {
-        width: 90%;
+        width: 95%;
     }
 
     .carrousel img {
@@ -401,8 +396,7 @@ img.pro6:hover~.div-pro6,
 
 @media only screen and (max-width: 480px) {
 
-    main div.title-misc,
-    section.section-izquierda h2 {
+    main div.title-misc {
         width: 50%;
     }
 
