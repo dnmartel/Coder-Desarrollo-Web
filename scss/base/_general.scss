@@ -1,0 +1,66 @@
+/* ALGUNAS REGLAS GENERALES */
+
+/* Reset margin y padding */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', sans-serif;
+}
+
+/* Refuerzo especifidad por BS */
+a {
+    text-decoration: none;
+}
+
+/* "Aire" vertical */
+main {
+    margin: 6em 0;
+}
+
+/* Clase para centrar cosas ;D */
+.flex-column {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* Formato de Titulos */
+h1,
+h2 {
+    font-weight: 400;
+    font-size: 40px;
+    text-transform: lowercase;
+    margin-bottom: 10px;
+}
+
+/* Formato de títulos */
+main {
+    div {
+        &.title-misc {
+            margin-bottom: 3em;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            @media only screen and (max-width: 480px) {
+                width: 50%;
+            }
+        }
+
+        h1 {
+            &.titles-pag {
+                hr {
+                    &.separador {
+                        width: 30px;
+                        height: 3px;
+                        background-color: black;
+                        display: inline-block;
+                        /* Correcciones de bootstrap */
+                        opacity: 100%;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

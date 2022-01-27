@@ -1,669 +1,569 @@
-/* Importo fuente de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap');
-
-/* Defino variables */
-:root {
-    --size-selfie-desktop: 20em;
-    --size-selfie-mobile: 15em;
-    --size-img-carrousel: 550px;
-    --size-img-portfolio: 550px;
-}
-
+@charset "UTF-8";
+/* Importo fuentes de G Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap");
+/* Importo reglas generales */
+/* ALGUNAS REGLAS GENERALES */
 /* Reset margin y padding */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Karla', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
 }
 
 /* Refuerzo especifidad por BS */
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-/* ALGUNAS REGLAS GENERALES */
 /* "Aire" vertical */
 main {
-    margin: 6em 0;
+  margin: 6em 0;
 }
 
-.title-misc {
-    margin-bottom: 3em;
-}
-
+/* Clase para centrar cosas ;D */
 .flex-column {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-/* HEADER */
-
-/* Formato header */
-header {
-    height: 5em;
-    width: 100%;
-    font-size: 18px;
-    font-weight: 300;
-    background-color: #fff;
-    position: sticky;
-    top: 0;
-    /* Sin el z-index, al aplicar transform el efecto "pisa" el header */
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 10px 10px #00000012;
-}
-
-header div {
-    display: flex;
-    width: 95%;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Tamaño logo */
-.tamaño-logo {
-    margin: 1em 0 1em 1em;
-    width: 8em;
-    display: inline-block;
-}
-
-.nav-header input,
-.nav-header label {
-    display: none;
-}
-
-/* Fuerzo la horizontalidad */
-.nav-menu li {
-    display: inline-block;
-}
-
-ul.nav-menu {
-    margin-bottom: 0;
-}
-
-/* Separación inter-links */
-.nav-menu li a {
-    color: #161616;
-    border-bottom: 0px solid #facd49;
-    margin: 0 1.5em;
-}
-
-/* Hover navbar */
-.nav-menu li a:hover {
-    color: #facd49;
-    border-bottom: 1.5px solid #facd49;
-}
-
-li a.active-page {
-    color: #facd49;
-}
-
-/* Media query para Mobile - Menu hamburguesa */
-@media only screen and (max-width: 968px) {
-
-    header img {
-        width: 6em;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 5em;
-        left: 0;
-        height: 0vh;
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-content: space-evenly;
-        background-color: rgba(0, 0, 0, 0.6);
-        transition: all 0.5s;
-    }
-
-    ul.nav-menu li {
-        display: none;
-        font-size: 1.2em;
-        line-height: 2em;
-        margin: 1em 0;
-        transition: all 0.5s;
-    }
-
-    nav.nav-header ul.nav-menu li a {
-        display: none;
-    }
-
-    .nav-header label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 3px solid #facd49;
-        border-radius: .5em;
-        width: 2em;
-        height: 2em;
-    }
-
-    #menu-hamb:checked~.nav-menu {
-        display: flex;
-        height: 90vh;
-    }
-
-    #menu-hamb:checked~.nav-menu li {
-        display: flex;
-    }
-
-    #menu-hamb:checked~ul.nav-menu li a {
-        color: #fff;
-        display: flex;
-        font-weight: 700;
-    }
-
-    #menu-hamb:checked~ul.nav-menu li a:hover {
-        color: #facd49;
-        border-bottom: none;
-    }
-}
-
-/* FIN HEADER */
-
-/* FOOTER */
-footer {
-    position: relative;
-    bottom: 0;
-    margin: 0 0 10px 0;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
-footer a svg {
-    margin: .75em .75em;
-    height: 1.8em;
-    border-bottom: 1.5px solid transparent;
-}
-
-.p-footer {
-    font-size: .75em;
-}
-
-.p-footer::after {
-    content: "\2122";
-    opacity: 0;
-    transition: all 0.5s ease-in;
-}
-
-.p-footer:hover::after {
-    opacity: 100%;
-}
-
-footer a svg:hover {
-    margin: .75em .75em;
-    height: 1.8em;
-    border-bottom: 1.5px solid #facd49;
-}
-/* FIN FOOTER */
-
-/* INDEX MAIN  */
-
-.main-carrousel {
-    margin: 4em 0;
-    min-height: var(--size-img-carrousel);
-    display: flex;
-    justify-content: center;
-}
-
-.carrousel {
-    width: 90%;
-    display: flex;
-    flex-flow: row wrap;
-    row-gap: 2em;
-    align-self: center;
-    justify-content: space-evenly;
-}
-
-.carrousel img {
-    height: var(--size-img-carrousel);
-    transition: all 0.5s;
-    cursor: crosshair;
-}
-
-/* Hover imagenes*/
-.carrousel img:hover {
-    transform: scale(0.95);
-}
-
-/* Ajustes para mobile y tablet */
-
-@media only screen and (min-width: 1200px) and (max-width: 1450px) {
-
-    .carrousel {
-        width: 95%;
-    }
-
-    .carrousel img {
-        height: 420px;
-    }
-}
-
-@media only screen and (min-width: 1450px) and (max-width: 1650px) {
-
-    .carrousel {
-        width: 95%;
-    }
-
-    .carrousel img {
-        height: 450px;
-    }
-}
-
-@media only screen and (max-width: 968px) {
-
-    .main-carrousel {
-        margin: 6em 0;
-    }
-
-    .carrousel {
-        width: 95%;
-    }
-}
-/*FIN MAIN INDEX*/
-
-
-/* PORTFOLIO */
-/* MAIN */
-
-/* Alineacion para titulos */
-main div.title-misc {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 /* Formato de Titulos */
 h1,
 h2 {
-    font-weight: 400;
-    font-size: 40px;
-    text-transform: lowercase;
-    margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 40px;
+  text-transform: lowercase;
+  margin-bottom: 10px;
 }
 
-/* se añaden clase para especifidad */
-h1.titles-pag hr.separador {
-    width: 30px;
-    height: 3px;
-    background-color: black;
-    display: inline-block;
-    /* Correcciones de bootstrap */
-    opacity: 100%;
-    margin: 0;
+/* Formato de títulos */
+main div.title-misc {
+  margin-bottom: 3em;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
-
-/* Centrado de section */
-section.section-portfolio {
-    margin: 2em 0;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-}
-
-.section-portfolio .filas {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-}
-
-/* Imagenes en portfolio */
-.filas article img {
-    width: 545px;
-    height: 560px;
-    object-fit: cover;
-}
-
-/* HOVER IMAGENES PROYECTO */
-.filas article {
-    position: relative;
-}
-
-.div-pro1,
-.div-pro2,
-.div-pro3,
-.div-pro4,
-.div-pro5,
-.div-pro6 {
-    position: absolute;
-    top: 1em;
-    left: 1em;
-    right: 3em;
-    background-color: white;
-    padding: 1em;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.25s;
-    filter: opacity(0%);
-}
-
-/* refuerzo de especifidad  */
-h3#title-proyect {
-    color: #000;
-    font-size: 1.2em;
-    font-weight: 400;
-    margin: 0 0 1em 1em;
-}
-
-a.a-proyect {
-    width: 50%;
-    font-size: .9em;
-    color: #161616;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-left: 1em;
-    transition: all .5s;
-}
-
-a.a-proyect::before {
-    content: "\25BA";
-    color: black;
-    transition: all .5s;
-}
-
-
-
-a.a-proyect:hover::before,
-a.a-proyect:hover {
-    margin-right: .1em;
-    letter-spacing: 0.07em;
-}
-
-img.pro1:hover~.div-pro1,
-.div-pro1:hover,
-img.pro2:hover~.div-pro2,
-.div-pro2:hover,
-img.pro3:hover~.div-pro3,
-.div-pro3:hover,
-img.pro4:hover~.div-pro4,
-.div-pro4:hover,
-img.pro5:hover~.div-pro5,
-.div-pro5:hover,
-img.pro6:hover~.div-pro6,
-.div-pro6:hover {
-    filter: opacity(100%);
-}
-
 @media only screen and (max-width: 480px) {
-
-    main div.title-misc {
-        width: 50%;
-    }
-
-    div.filas article img {
-        width: 380px;
-    }
+  main div.title-misc {
+    width: 50%;
+  }
+}
+main div h1.titles-pag hr.separador {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  display: inline-block;
+  /* Correcciones de bootstrap */
+  opacity: 100%;
+  margin: 0;
 }
 
-@media only screen and (min-width: 481px) and (max-width: 960px) {
-    div.filas article img {
-        width: 360px;
-    }
+/* Importo secciones */
+/* HEADER */
+header {
+  height: 5em;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 300;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  /* Sin el z-index, al aplicar transform el efecto "pisa" el header */
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 10px 10px #00000012;
 }
-
-/* FIN PORTFOLIO */
-
-/* CLIENTES - ESTA PARTE LA REESCRIBÍ CON GRID SYSTEM, QUEDÓ */
-
-.grayscale-filter {
-    filter: grayscale(100%);
-    transition: all 0.5s;
+header div {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.opacity-filter {
-    transition: all 0.5s;
-    filter: opacity(75%);
+header div a .tamaño-logo {
+  /* Tamaño logo */
+  margin: 1em 0 1em 1em;
+  width: 8em;
+  display: inline-block;
 }
-
-.grayscale-filter:hover,
-.opacity-filter:hover {
-    filter: none;
+@media only screen and (max-width: 968px) {
+  header div a .tamaño-logo {
+    width: 6em;
+  }
 }
-
-main.main-clientes section div img {
-    display: block;
-    max-height: 10em;
-    max-width: 15em;
-    margin: 1em 2em;
+header div input {
+  display: none;
 }
-
-/* FIN CLIENTES */
-
-
-/* SOBRE MI */
-
-.grid-container-sobremi {
-    align-self: center;
-    width: 60%;
-    display: grid;
-    grid-template: 3fr 1fr / 1fr 1fr;
-    row-gap: 5em;
+header div label {
+  /* Oculto menu hamb en desktop */
+  display: none;
 }
-
-.sector2 {
+@media only screen and (max-width: 968px) {
+  header div label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #facd49;
+    border-radius: 0.5em;
+    width: 2em;
+    height: 2em;
+  }
+}
+@media only screen and (max-width: 968px) {
+  header div #menu-hamb:checked ~ .nav-menu {
+    display: flex;
+    height: 90vh;
+    width: 100vw;
+    align-items: center;
+    /* Corrijo BS */
+    padding-left: 0;
+  }
+  header div #menu-hamb:checked ~ .nav-menu li {
+    display: flex;
+  }
+  header div #menu-hamb:checked ~ .nav-menu li a {
+    color: #fff;
+    display: flex;
+    font-weight: 700;
+  }
+  header div #menu-hamb:checked ~ .nav-menu li a:hover {
+    color: #facd49;
+    border-bottom: none;
+  }
+}
+header div .nav-menu {
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 968px) {
+  header div .nav-menu {
+    position: fixed;
+    top: 5em;
+    left: 0;
+    height: 0vh;
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-}
-
-.selfie {
-    align-self: center;
-    width: var(--size-selfie-desktop);
-    height: var(--size-selfie-desktop);
-    border-radius: var(--size-selfie-desktop);
-    margin: 0 0 2em 0;
-}
-
-.epigrafe {
-    align-self: center;
-    max-width: 80%;
-    line-height: 1.5em;
-    color: #353535;
-    font-weight: 500;
-}
-
-.sector1 figcaption,
-.sector3 figcaption {
-    margin-top: .5em;
-    opacity: 0%;
-    transition: all 2s ease;
-}
-
-.sector4 {
-    font-weight: 300;
-    font-size: 1.5em;
-    text-transform: lowercase;
-    display: grid;
-    grid-template: 1fr / repeat(4, 1fr);
-    align-items: flex-start;
-}
-
-.sector4 p {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    list-style: none;
-    line-height: 2em;
-    margin: 0 1em;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.6);
     transition: all 0.5s;
-    user-select: none;
+  }
+}
+header div .nav-menu li {
+  /* Fuerzo la horizontalidad */
+  display: inline-block;
+}
+@media only screen and (max-width: 968px) {
+  header div .nav-menu li {
+    display: none;
+    font-size: 1.2em;
+    line-height: 2em;
+    margin: 1em 0;
+    transition: all 0.5s;
+  }
+}
+header div .nav-menu li a {
+  color: #161616;
+  border-bottom: 0px solid #facd49;
+  /* Separación inter-links */
+  margin: 0 1.5em;
+}
+@media only screen and (max-width: 968px) {
+  header div .nav-menu li a {
+    display: none;
+  }
+}
+header div .nav-menu li a:hover {
+  /* Hover links navbar */
+  color: #facd49;
+  border-bottom: 1.5px solid #facd49;
+}
+header div .nav-menu li a.active-page {
+  /* Destaco la página activa */
+  color: #facd49;
 }
 
-.sector4 p:nth-child(1) {
-    animation: up-colored 2s ease 0s;
+/* FIN HEADER */
+/* Footer */
+footer {
+  position: relative;
+  bottom: 0;
+  margin: 0 0 10px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+footer div a svg {
+  margin: 0.75em 0.75em;
+  height: 1.8em;
+  border-bottom: 1.5px solid transparent;
+}
+footer div a svg:hover {
+  margin: 0.75em 0.75em;
+  height: 1.8em;
+  border-bottom: 1.5px solid #facd49;
+}
+footer p.p-footer {
+  font-size: 0.75em;
+}
+footer p.p-footer::after {
+  content: "™";
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+footer p.p-footer:hover::after {
+  opacity: 100%;
 }
 
-.sector4 p:nth-child(2) {
-    animation: up-colored 2s ease 2s;
+/* Fin Footer */
+/* Importo variables */
+/* Tamaño imágenes */
+/* Inicio Index */
+main.main-carrousel {
+  margin: 4em 0;
+  min-height: 550px;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 968px) {
+  main.main-carrousel {
+    margin: 6em 0;
+  }
+}
+main.main-carrousel .carrousel {
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  row-gap: 2em;
+  align-self: center;
+  justify-content: space-evenly;
+}
+@media only screen and (max-width: 968px) {
+  main.main-carrousel .carrousel {
+    width: 95%;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1650px) {
+  main.main-carrousel .carrousel {
+    width: 95%;
+  }
+}
+main.main-carrousel .carrousel img {
+  height: 550px;
+  transition: all 0.5s;
+  cursor: crosshair;
+}
+main.main-carrousel .carrousel img:hover {
+  transform: scale(0.95);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  main.main-carrousel .carrousel img {
+    height: 420px;
+  }
+}
+@media only screen and (min-width: 1450px) and (max-width: 1650px) {
+  main.main-carrousel .carrousel img {
+    height: 450px;
+  }
 }
 
-.sector4 p:nth-child(3) {
-    animation: up-colored 2s ease 4s;
+/* Fin Index */
+/* Inicio Sección Portfolio */
+main section.section-portfolio {
+  margin: 2em 0;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+main section.section-portfolio div.filas {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+main section.section-portfolio div.filas article {
+  position: relative;
+}
+main section.section-portfolio div.filas article img {
+  width: 545px;
+  height: 560px;
+  object-fit: cover;
+}
+main section.section-portfolio div.filas article img.pro1:hover ~ .div-pro1, main section.section-portfolio div.filas article img.pro1:hover ~ .div-pro2, main section.section-portfolio div.filas article img.pro1:hover ~ .div-pro3, main section.section-portfolio div.filas article img.pro1:hover ~ .div-pro4, main section.section-portfolio div.filas article img.pro1:hover ~ .div-pro5, main section.section-portfolio div.filas article img.pro1:hover ~ .div-pro6, main section.section-portfolio div.filas article img.pro2:hover ~ .div-pro1, main section.section-portfolio div.filas article img.pro2:hover ~ .div-pro2, main section.section-portfolio div.filas article img.pro2:hover ~ .div-pro3, main section.section-portfolio div.filas article img.pro2:hover ~ .div-pro4, main section.section-portfolio div.filas article img.pro2:hover ~ .div-pro5, main section.section-portfolio div.filas article img.pro2:hover ~ .div-pro6, main section.section-portfolio div.filas article img.pro3:hover ~ .div-pro1, main section.section-portfolio div.filas article img.pro3:hover ~ .div-pro2, main section.section-portfolio div.filas article img.pro3:hover ~ .div-pro3, main section.section-portfolio div.filas article img.pro3:hover ~ .div-pro4, main section.section-portfolio div.filas article img.pro3:hover ~ .div-pro5, main section.section-portfolio div.filas article img.pro3:hover ~ .div-pro6, main section.section-portfolio div.filas article img.pro4:hover ~ .div-pro1, main section.section-portfolio div.filas article img.pro4:hover ~ .div-pro2, main section.section-portfolio div.filas article img.pro4:hover ~ .div-pro3, main section.section-portfolio div.filas article img.pro4:hover ~ .div-pro4, main section.section-portfolio div.filas article img.pro4:hover ~ .div-pro5, main section.section-portfolio div.filas article img.pro4:hover ~ .div-pro6, main section.section-portfolio div.filas article img.pro5:hover ~ .div-pro1, main section.section-portfolio div.filas article img.pro5:hover ~ .div-pro2, main section.section-portfolio div.filas article img.pro5:hover ~ .div-pro3, main section.section-portfolio div.filas article img.pro5:hover ~ .div-pro4, main section.section-portfolio div.filas article img.pro5:hover ~ .div-pro5, main section.section-portfolio div.filas article img.pro5:hover ~ .div-pro6, main section.section-portfolio div.filas article img.pro6:hover ~ .div-pro1, main section.section-portfolio div.filas article img.pro6:hover ~ .div-pro2, main section.section-portfolio div.filas article img.pro6:hover ~ .div-pro3, main section.section-portfolio div.filas article img.pro6:hover ~ .div-pro4, main section.section-portfolio div.filas article img.pro6:hover ~ .div-pro5, main section.section-portfolio div.filas article img.pro6:hover ~ .div-pro6 {
+  filter: opacity(100%);
+}
+@media only screen and (max-width: 480px) {
+  main section.section-portfolio div.filas article img {
+    width: 380px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 960px) {
+  main section.section-portfolio div.filas article img {
+    width: 360px;
+  }
+}
+main section.section-portfolio div.filas article div.div-pro1, main section.section-portfolio div.filas article div.div-pro2, main section.section-portfolio div.filas article div.div-pro3, main section.section-portfolio div.filas article div.div-pro4, main section.section-portfolio div.filas article div.div-pro5, main section.section-portfolio div.filas article div.div-pro6 {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  right: 3em;
+  background-color: white;
+  padding: 1em;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s;
+  filter: opacity(0%);
+}
+main section.section-portfolio div.filas article div.div-pro1:hover, main section.section-portfolio div.filas article div.div-pro2:hover, main section.section-portfolio div.filas article div.div-pro3:hover, main section.section-portfolio div.filas article div.div-pro4:hover, main section.section-portfolio div.filas article div.div-pro5:hover, main section.section-portfolio div.filas article div.div-pro6:hover {
+  filter: opacity(100%);
+}
+main section.section-portfolio div.filas article div.div-pro1 h3.title-proyect, main section.section-portfolio div.filas article div.div-pro2 h3.title-proyect, main section.section-portfolio div.filas article div.div-pro3 h3.title-proyect, main section.section-portfolio div.filas article div.div-pro4 h3.title-proyect, main section.section-portfolio div.filas article div.div-pro5 h3.title-proyect, main section.section-portfolio div.filas article div.div-pro6 h3.title-proyect {
+  color: #000;
+  font-size: 1.2em;
+  font-weight: 400;
+  margin: 0 0 1em 1em;
+}
+main section.section-portfolio div.filas article div.div-pro1 a.a-proyect, main section.section-portfolio div.filas article div.div-pro2 a.a-proyect, main section.section-portfolio div.filas article div.div-pro3 a.a-proyect, main section.section-portfolio div.filas article div.div-pro4 a.a-proyect, main section.section-portfolio div.filas article div.div-pro5 a.a-proyect, main section.section-portfolio div.filas article div.div-pro6 a.a-proyect {
+  width: 50%;
+  font-size: 0.9em;
+  color: #161616;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 1em;
+  transition: all 0.5s;
+}
+main section.section-portfolio div.filas article div.div-pro1 a.a-proyect:hover, main section.section-portfolio div.filas article div.div-pro2 a.a-proyect:hover, main section.section-portfolio div.filas article div.div-pro3 a.a-proyect:hover, main section.section-portfolio div.filas article div.div-pro4 a.a-proyect:hover, main section.section-portfolio div.filas article div.div-pro5 a.a-proyect:hover, main section.section-portfolio div.filas article div.div-pro6 a.a-proyect:hover {
+  margin-right: 0.15em;
+  letter-spacing: 0.08em;
+}
+main section.section-portfolio div.filas article div.div-pro1 a.a-proyect::before, main section.section-portfolio div.filas article div.div-pro2 a.a-proyect::before, main section.section-portfolio div.filas article div.div-pro3 a.a-proyect::before, main section.section-portfolio div.filas article div.div-pro4 a.a-proyect::before, main section.section-portfolio div.filas article div.div-pro5 a.a-proyect::before, main section.section-portfolio div.filas article div.div-pro6 a.a-proyect::before {
+  content: "►";
+  color: black;
+  transition: all 0.5s;
 }
 
-.sector4 p:nth-child(4) {
-    animation: up-colored 2s ease 6s;
+/* Fin Sección Portfolio */
+/* Inicio Clientes */
+main.main-clientes section div .grayscale-filter {
+  filter: grayscale(100%);
+  transition: all 0.5s;
+}
+main.main-clientes section div .grayscale-filter:hover {
+  filter: none;
+}
+main.main-clientes section div .opacity-filter {
+  transition: all 0.5s;
+  filter: opacity(75%);
+}
+main.main-clientes section div .opacity-filter:hover {
+  filter: none;
+}
+main.main-clientes section div img {
+  display: block;
+  max-height: 10em;
+  max-width: 15em;
+  margin: 1em 2em;
 }
 
+/* Fin Clientes */
+/* Inicio Sección SobreMi */
+main section.grid-container-sobremi {
+  align-self: center;
+  width: 60%;
+  display: grid;
+  grid-template: 3fr 1fr/1fr 1fr;
+  row-gap: 5em;
+}
+@media only screen and (max-width: 480px) {
+  main section.grid-container-sobremi {
+    width: 100%;
+    grid-template: 1fr/1fr;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 967px) {
+  main section.grid-container-sobremi {
+    align-self: center;
+    width: 95%;
+    display: grid;
+    grid-template: 1fr/1fr;
+    row-gap: 3em;
+  }
+}
+main section.grid-container-sobremi div.sector1 figcaption {
+  margin-top: 0.5em;
+  opacity: 0%;
+  transition: all 2s ease;
+}
+@media only screen and (max-width: 967px) {
+  main section.grid-container-sobremi div.sector1 figcaption {
+    display: none;
+  }
+}
+@media only screen and (min-width: 968px) {
+  main section.grid-container-sobremi div.sector1:hover figcaption {
+    opacity: 100%;
+  }
+}
+@media only screen and (max-width: 967px) {
+  main section.grid-container-sobremi div.sector1 {
+    display: flex;
+    justify-content: center;
+  }
+}
+main section.grid-container-sobremi div.sector2 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+main section.grid-container-sobremi div.sector2 .selfie {
+  align-self: center;
+  width: 20em;
+  height: 20em;
+  border-radius: 20em;
+  margin: 0 0 2em 0;
+}
+@media only screen and (max-width: 967px) {
+  main section.grid-container-sobremi div.sector2 .selfie {
+    align-self: center;
+    width: 15em;
+    height: 15em;
+    border-radius: 15em;
+    margin: 0 0 2em 0;
+  }
+}
+main section.grid-container-sobremi div.sector2 .epigrafe {
+  align-self: center;
+  max-width: 80%;
+  line-height: 1.5em;
+  color: #353535;
+  font-weight: 500;
+}
+@media only screen and (min-width: 481px) and (max-width: 967px) {
+  main section.grid-container-sobremi div.sector2 .epigrafe {
+    max-width: 90%;
+  }
+}
+main section.grid-container-sobremi div.sector3 figcaption {
+  margin-top: 0.5em;
+  opacity: 0%;
+  transition: all 2s ease;
+}
+@media only screen and (max-width: 967px) {
+  main section.grid-container-sobremi div.sector3 figcaption {
+    display: none;
+  }
+}
+@media only screen and (min-width: 968px) {
+  main section.grid-container-sobremi div.sector3:hover figcaption {
+    opacity: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  main section.grid-container-sobremi div.sector3 {
+    display: flex;
+    justify-content: center;
+    margin: 3em 0 -1em 0;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 967px) {
+  main section.grid-container-sobremi div.sector3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+  }
+}
+main section.grid-container-sobremi div.sector4 {
+  font-weight: 300;
+  font-size: 1.5em;
+  text-transform: lowercase;
+  display: grid;
+  grid-template: 1fr/repeat(4, 1fr);
+  align-items: flex-start;
+}
+@media only screen and (max-width: 480px) {
+  main section.grid-container-sobremi div.sector4 {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 967px) {
+  main section.grid-container-sobremi div.sector4 {
+    margin-top: 2em;
+  }
+}
+main section.grid-container-sobremi div.sector4 p {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  list-style: none;
+  line-height: 2em;
+  margin: 0 1em;
+  transition: all 0.5s;
+  user-select: none;
+}
+@media only screen and (max-width: 480px) {
+  main section.grid-container-sobremi div.sector4 p {
+    line-height: 5em;
+  }
+}
+main section.grid-container-sobremi div.sector4 p:nth-child(1) {
+  animation: up-colored 2s ease 0s;
+}
+main section.grid-container-sobremi div.sector4 p:nth-child(2) {
+  animation: up-colored 2s ease 2s;
+}
+main section.grid-container-sobremi div.sector4 p:nth-child(3) {
+  animation: up-colored 2s ease 4s;
+}
+main section.grid-container-sobremi div.sector4 p:nth-child(4) {
+  animation: up-colored 2s ease 6s;
+}
+main section.grid-container-sobremi div.sector4 p:nth-child(-n+4):hover {
+  color: #facd49;
+  transform: translateY(-1em);
+}
 @keyframes up-colored {
-    0% {
-        color: #161616;
-        transform: translateY(0);
-    }
-
-    50% {
-        color: #facd49;
-        transform: translateY(-1em);
-    }
-
-    100% {
-        color: #161616;
-        transform: translateY(0);
-    }
-}
-
-.sector4 p:nth-child(-n+4):hover {
+  0% {
+    color: #161616;
+    transform: translateY(0);
+  }
+  50% {
     color: #facd49;
     transform: translateY(-1em);
+  }
+  100% {
+    color: #161616;
+    transform: translateY(0);
+  }
 }
-
-@media only screen and (max-width: 480px) {
-
-    .sector1 figcaption,
-    .sector3 figcaption {
-        display: none;
-    }
-
-    .grid-container-sobremi {
-        width: 100%;
-        grid-template: 1fr / 1fr;
-    }
-
-    .selfie {
-        align-self: center;
-        width: var(--size-selfie-mobile);
-        height: var(--size-selfie-mobile);
-        border-radius: var(--size-selfie-mobile);
-        margin: 0 0 2em 0;
-    }
-
-    .sector1 {
-        display: flex;
-        justify-content: center;
-    }
-
-    .sector3 {
-        display: flex;
-        justify-content: center;
-        margin: 3em 0 -1em 0;
-    }
-
-    .sector4 {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-    }
-
-    .sector4 p {
-        line-height: 5em;
-    }
-
-}
-
 @media only screen and (min-width: 481px) and (max-width: 967px) {
-
-    .sector1 figcaption,
-    .sector3 figcaption {
-        display: none;
-    }
-
-    .selfie {
-        align-self: center;
-        width: var(--size-selfie-mobile);
-        height: var(--size-selfie-mobile);
-        border-radius: var(--size-selfie-mobile);
-        margin: 0 0 2em 0;
-    }
-
-    .grid-container-sobremi {
-        align-self: center;
-        width: 95%;
-        display: grid;
-        grid-template: 1fr / 1fr;
-        row-gap: 3em;
-    }
-
-    .epigrafe {
-        align-self: center;
-        max-width: 90%;
-        line-height: 1.5em;
-        color: #353535;
-        font-weight: 500;
-    }
-
-    .sector1 {
-        display: flex;
-        justify-content: center;
-    }
-
-    .sector3 {
-        display: flex;
-        justify-content: center;
-        margin-top: 2em;
-    }
-
-    .sector4 {
-        margin-top: 2em;
-    }
-
-    .sector4 p {
-        line-height: 1.5em;
-    }
-
+  main section.grid-container-sobremi div.sector4 p {
+    line-height: 1.5em;
+  }
 }
 
-@media only screen and (min-width: 968px) {
-
-    .sector1:hover figcaption,
-    .sector3:hover figcaption {
-        opacity: 100%;
-    }
-}
-
-/* FIN SOBRE MI */
-
-
-/* CONTACTO */
-
+/* Fin Sección SobreMi */
+/* Contacto - Media Queries */
 @media only screen and (max-width: 480px) {
-
-    .ancho-formulario {
-        width: 90%;
-    }
+  main section.ancho-formulario {
+    width: 90%;
+  }
 }
-
 @media only screen and (min-width: 481px) and (max-width: 967px) {
-
-    .ancho-formulario {
-        width: 75%;
-    }
+  main section.ancho-formulario {
+    width: 75%;
+  }
 }
-
 @media only screen and (min-width: 968px) {
-
-    .ancho-formulario {
-        width: 50%;
-    }
+  main section.ancho-formulario {
+    width: 50%;
+  }
 }
 
-/* FIN CONTACTO */
+/* Fin Contacto */
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+/* Importo fuentes de G Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Importo reglas generales */
+
+@import 'base/general';
+
+/* Importo secciones */
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/index';
+@import 'components/portfolio';
+@import 'components/clientes';
+@import 'components/sobremi';
+@import 'components/contacto';

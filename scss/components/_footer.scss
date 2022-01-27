@@ -1,0 +1,48 @@
+/* Footer */
+
+footer {
+    position: relative;
+    bottom: 0;
+    margin: 0 0 10px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        a {
+            svg {
+                margin: .75em .75em;
+                height: 1.8em;
+                border-bottom: 1.5px solid transparent;
+
+                &:hover {
+                    margin: .75em .75em;
+                    height: 1.8em;
+                    border-bottom: 1.5px solid #facd49;
+                }
+
+            }
+        }
+    }
+
+    p {
+        &.p-footer {
+            font-size: .75em;
+
+            &::after {
+                content: "\2122";
+                opacity: 0;
+                transition: all 0.5s ease-in;
+            }
+
+            &:hover {
+                &::after {
+                    opacity: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* Fin Footer */

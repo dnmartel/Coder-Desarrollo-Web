@@ -1,0 +1,196 @@
+/* Inicio Sección SobreMi */
+
+main {
+    section {
+        &.grid-container-sobremi {
+            align-self: center;
+            width: 60%;
+            display: grid;
+            grid-template: 3fr 1fr / 1fr 1fr;
+            row-gap: 5em;
+
+            @media only screen and (max-width: 480px) {
+                width: 100%;
+                grid-template: 1fr / 1fr;
+            }
+
+            @media only screen and (min-width: 481px) and (max-width: 967px) {
+                align-self: center;
+                width: 95%;
+                display: grid;
+                grid-template: 1fr / 1fr;
+                row-gap: 3em;
+            }
+
+            div {
+                &.sector1 {
+                    figcaption {
+                        margin-top: .5em;
+                        opacity: 0%;
+                        transition: all 2s ease;
+
+                        @media only screen and (max-width: 967px) {
+                            display: none;
+                        }
+                    }
+
+                    @media only screen and (min-width: 968px) {
+                        &:hover figcaption {
+                            opacity: 100%;
+                        }
+                    }
+
+                    @media only screen and (max-width: 967px) {
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+
+                &.sector2 {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+
+                    .selfie {
+                        align-self: center;
+                        width: $size-selfie-desktop;
+                        height: $size-selfie-desktop;
+                        border-radius: $size-selfie-desktop;
+                        margin: 0 0 2em 0;
+
+                        @media only screen and (max-width: 967px) {
+                            align-self: center;
+                            width: $size-selfie-mobile;
+                            height: $size-selfie-mobile;
+                            border-radius: $size-selfie-mobile;
+                            margin: 0 0 2em 0;
+                        }
+                    }
+
+                    .epigrafe {
+                        align-self: center;
+                        max-width: 80%;
+                        line-height: 1.5em;
+                        color: #353535;
+                        font-weight: 500;
+
+                        @media only screen and (min-width: 481px) and (max-width: 967px) {
+                            max-width: 90%;
+                        }
+                    }
+                }
+
+                &.sector3 {
+                    figcaption {
+                        margin-top: .5em;
+                        opacity: 0%;
+                        transition: all 2s ease;
+
+                        @media only screen and (max-width: 967px) {
+                            display: none;
+                        }
+                    }
+
+                    @media only screen and (min-width: 968px) {
+                        &:hover figcaption {
+                            opacity: 100%;
+                        }
+                    }
+
+                    @media only screen and (max-width: 480px) {
+                        display: flex;
+                        justify-content: center;
+                        margin: 3em 0 -1em 0;
+                    }
+
+                    @media only screen and (min-width: 481px) and (max-width: 967px) {
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 2em;
+                    }
+                }
+
+                &.sector4 {
+                    font-weight: 300;
+                    font-size: 1.5em;
+                    text-transform: lowercase;
+                    display: grid;
+                    grid-template: 1fr / repeat(4, 1fr);
+                    align-items: flex-start;
+
+                    @media only screen and (max-width: 480px) {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        align-items: center;
+                    }
+
+                    @media only screen and (min-width: 481px) and (max-width: 967px) {
+                        margin-top: 2em;
+                    }
+
+
+                    p {
+                        display: flex;
+                        flex-flow: column wrap;
+                        justify-content: center;
+                        list-style: none;
+                        line-height: 2em;
+                        margin: 0 1em;
+                        transition: all 0.5s;
+                        user-select: none;
+
+                        @media only screen and (max-width: 480px) {
+                            line-height: 5em;
+                        }
+
+                        &:nth-child(1) {
+                            animation: up-colored 2s ease 0s;
+                        }
+
+                        &:nth-child(2) {
+                            animation: up-colored 2s ease 2s;
+                        }
+
+                        &:nth-child(3) {
+                            animation: up-colored 2s ease 4s;
+                        }
+
+                        &:nth-child(4) {
+                            animation: up-colored 2s ease 6s;
+                        }
+
+                        &:nth-child(-n+4):hover {
+                            color: #facd49;
+                            transform: translateY(-1em);
+                        }
+
+                        @keyframes up-colored {
+                            0% {
+                                color: #161616;
+                                transform: translateY(0);
+                            }
+
+                            50% {
+                                color: #facd49;
+                                transform: translateY(-1em);
+                            }
+
+                            100% {
+                                color: #161616;
+                                transform: translateY(0);
+                            }
+                        }
+
+                        @media only screen and (min-width: 481px) and (max-width: 967px) {
+                            line-height: 1.5em;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+/* Fin Sección SobreMi */

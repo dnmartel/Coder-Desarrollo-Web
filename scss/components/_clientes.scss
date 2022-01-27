@@ -1,0 +1,38 @@
+/* Inicio Clientes */
+
+main {
+    &.main-clientes {
+        section {
+            div {
+                .grayscale-filter {
+                    filter: grayscale(100%);
+                    transition: all 0.5s;
+
+                    &:hover {
+                        filter: none;
+                    }
+
+                }
+
+                .opacity-filter {
+                    transition: all 0.5s;
+                    filter: opacity(75%);
+
+                    &:hover {
+                        filter: none;
+                    }
+                }
+
+                img {
+                    display: block;
+                    max-height: 10em;
+                    max-width: 15em;
+                    margin: 1em 2em;
+                }
+            }
+        }
+    }
+}
+
+
+/* Fin Clientes */

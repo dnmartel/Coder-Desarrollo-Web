@@ -1,0 +1,56 @@
+/* Importo variables */
+@import '../base/variables';
+
+/* Inicio Index */
+
+main {
+    &.main-carrousel {
+        margin: 4em 0;
+        min-height: $size-img-carrousel;
+        display: flex;
+        justify-content: center;
+
+        @media only screen and (max-width: 968px) {
+            margin: 6em 0;
+        }
+
+        .carrousel {
+            width: 90%;
+            display: flex;
+            flex-flow: row wrap;
+            row-gap: 2em;
+            align-self: center;
+            justify-content: space-evenly;
+
+            @media only screen and (max-width: 968px) {
+                width: 95%;
+            }
+
+            @media only screen and (min-width: 1200px) and (max-width: 1650px) {
+                width: 95%;
+            }
+
+            img {
+                height: $size-img-carrousel;
+                transition: all 0.5s;
+                cursor: crosshair;
+
+                &:hover {
+                    transform: scale(0.95);
+                }
+
+                @media only screen and (min-width: 1200px) and (max-width: 1450px) {
+
+                    height: 420px;
+                }
+
+                @media only screen and (min-width: 1450px) and (max-width: 1650px) {
+                    height: 450px;
+                }
+
+            }
+        }
+    }
+}
+
+/* Fin Index */
