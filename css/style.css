@@ -3,11 +3,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap");
 /* Importo reglas generales */
 /* ALGUNAS REGLAS GENERALES */
+/* Mapas */
 /* Reset margin y padding */
 * {
   margin: 0;
   padding: 0;
   font-family: "Karla", sans-serif;
+}
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #facd49;
+  border-radius: 0.3em;
+  border-right: 2px solid white;
 }
 
 /* Refuerzo especifidad por BS */
@@ -20,7 +32,7 @@ main {
   margin: 6em 0;
 }
 
-/* Clase para centrar cosas ;D */
+/* Clase para centrar cosas */
 .flex-column {
   display: flex;
   flex-flow: column nowrap;
@@ -51,21 +63,31 @@ main div.title-misc {
 main div h1.titles-pag hr.separador {
   width: 30px;
   height: 3px;
-  background-color: black;
+  background-color: #161616;
   display: inline-block;
   /* Correcciones de bootstrap */
   opacity: 100%;
   margin: 0;
 }
 
+/* Mapas */
+/* Extends */
+main section.grid-container-sobremi div.sector4 p, main section.grid-container-sobremi div.sector2 {
+  display: flex;
+  justify-content: center;
+}
+
+/* Mixins */
 /* Importo secciones */
 /* HEADER */
+/* Importo mapas */
+/* Mapas */
 header {
   height: 5em;
   width: 100%;
   font-size: 18px;
   font-weight: 300;
-  background-color: #fff;
+  background-color: white;
   position: sticky;
   top: 0;
   /* Sin el z-index, al aplicar transform el efecto "pisa" el header */
@@ -122,7 +144,7 @@ header div label {
     display: flex;
   }
   header div #menu-hamb:checked ~ .nav-menu li a {
-    color: #fff;
+    color: white;
     display: flex;
     font-weight: 700;
   }
@@ -219,6 +241,7 @@ footer p.p-footer:hover::after {
 /* Fin Footer */
 /* Importo variables */
 /* Tamaño imágenes */
+/* Mixins */
 /* Inicio Index */
 main.main-carrousel {
   margin: 4em 0;
@@ -256,6 +279,10 @@ main.main-carrousel .carrousel img {
 }
 main.main-carrousel .carrousel img:hover {
   transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
 }
 @media only screen and (min-width: 1200px) and (max-width: 1450px) {
   main.main-carrousel .carrousel img {
@@ -270,6 +297,7 @@ main.main-carrousel .carrousel img:hover {
 
 /* Fin Index */
 /* Inicio Sección Portfolio */
+/* Mapas */
 main section.section-portfolio {
   margin: 2em 0;
   justify-content: center;
@@ -321,7 +349,7 @@ main section.section-portfolio div.filas article div.div-pro1:hover, main sectio
   filter: opacity(100%);
 }
 main section.section-portfolio div.filas article div.div-pro1 h3.title-proyect, main section.section-portfolio div.filas article div.div-pro2 h3.title-proyect, main section.section-portfolio div.filas article div.div-pro3 h3.title-proyect, main section.section-portfolio div.filas article div.div-pro4 h3.title-proyect, main section.section-portfolio div.filas article div.div-pro5 h3.title-proyect, main section.section-portfolio div.filas article div.div-pro6 h3.title-proyect {
-  color: #000;
+  color: #161616;
   font-size: 1.2em;
   font-weight: 400;
   margin: 0 0 1em 1em;
@@ -341,7 +369,7 @@ main section.section-portfolio div.filas article div.div-pro1 a.a-proyect:hover,
 }
 main section.section-portfolio div.filas article div.div-pro1 a.a-proyect::before, main section.section-portfolio div.filas article div.div-pro2 a.a-proyect::before, main section.section-portfolio div.filas article div.div-pro3 a.a-proyect::before, main section.section-portfolio div.filas article div.div-pro4 a.a-proyect::before, main section.section-portfolio div.filas article div.div-pro5 a.a-proyect::before, main section.section-portfolio div.filas article div.div-pro6 a.a-proyect::before {
   content: "►";
-  color: black;
+  color: #161616;
   transition: all 0.5s;
 }
 
@@ -370,6 +398,15 @@ main.main-clientes section div img {
 
 /* Fin Clientes */
 /* Inicio Sección SobreMi */
+/* Importo mapas / extends */
+/* Mapas */
+/* Extends */
+main section.grid-container-sobremi div.sector4 p, main section.grid-container-sobremi div.sector2 {
+  display: flex;
+  justify-content: center;
+}
+
+/* Mixins */
 main section.grid-container-sobremi {
   align-self: center;
   width: 60%;
@@ -414,9 +451,7 @@ main section.grid-container-sobremi div.sector1 figcaption {
   }
 }
 main section.grid-container-sobremi div.sector2 {
-  display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
 }
 main section.grid-container-sobremi div.sector2 .selfie {
   align-self: center;
@@ -438,7 +473,7 @@ main section.grid-container-sobremi div.sector2 .epigrafe {
   align-self: center;
   max-width: 80%;
   line-height: 1.5em;
-  color: #353535;
+  color: #505050;
   font-weight: 500;
 }
 @media only screen and (min-width: 481px) and (max-width: 967px) {
@@ -496,9 +531,7 @@ main section.grid-container-sobremi div.sector4 {
   }
 }
 main section.grid-container-sobremi div.sector4 p {
-  display: flex;
   flex-flow: column wrap;
-  justify-content: center;
   list-style: none;
   line-height: 2em;
   margin: 0 1em;
@@ -525,19 +558,35 @@ main section.grid-container-sobremi div.sector4 p:nth-child(4) {
 main section.grid-container-sobremi div.sector4 p:nth-child(-n+4):hover {
   color: #facd49;
   transform: translateY(-1em);
+  -webkit-transform: translateY(-1em);
+  -o-transform: translateY(-1em);
+  -moz-transform: translateY(-1em);
+  -ms-transform: translateY(-1em);
 }
 @keyframes up-colored {
   0% {
     color: #161616;
     transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -o-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
   }
   50% {
     color: #facd49;
     transform: translateY(-1em);
+    -webkit-transform: translateY(-1em);
+    -o-transform: translateY(-1em);
+    -moz-transform: translateY(-1em);
+    -ms-transform: translateY(-1em);
   }
   100% {
     color: #161616;
     transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -o-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 967px) {

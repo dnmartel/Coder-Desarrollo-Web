@@ -1,10 +1,23 @@
 /* ALGUNAS REGLAS GENERALES */
-
+@import '../base/mapas';
 /* Reset margin y padding */
 * {
     margin: 0;
     padding: 0;
     font-family: 'Karla', sans-serif;
+}
+
+/* Scrollbar */
+body {
+    &::-webkit-scrollbar {
+        width: .5em;
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: map-get($colors, primary);
+        border-radius: .3em;        
+        border-right: 2px solid map-get($colors, backgrounds);
+    }
 }
 
 /* Refuerzo especifidad por BS */
@@ -17,7 +30,7 @@ main {
     margin: 6em 0;
 }
 
-/* Clase para centrar cosas ;D */
+/* Clase para centrar cosas */
 .flex-column {
     display: flex;
     flex-flow: column nowrap;
@@ -53,7 +66,7 @@ main {
                     &.separador {
                         width: 30px;
                         height: 3px;
-                        background-color: black;
+                        background-color: map-get($colors, secondary);
                         display: inline-block;
                         /* Correcciones de bootstrap */
                         opacity: 100%;

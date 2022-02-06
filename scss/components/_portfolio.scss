@@ -1,5 +1,7 @@
 /* Inicio Sección Portfolio */
 
+@import '../base/mapas';
+
 main {
 
     section {
@@ -66,7 +68,7 @@ main {
                                 top: 1em;
                                 left: 1em;
                                 right: 3em;
-                                background-color: white;
+                                background-color: map-get($colors, backgrounds);
                                 padding: 1em;
                                 width: 80%;
                                 display: flex;
@@ -80,7 +82,7 @@ main {
 
                                 h3 {
                                     &.title-proyect {
-                                        color: #000;
+                                        color: map-get($colors, secondary);
                                         font-size: 1.2em;
                                         font-weight: 400;
                                         margin: 0 0 1em 1em;
@@ -91,7 +93,7 @@ main {
                                     &.a-proyect {
                                         width: 50%;
                                         font-size: .9em;
-                                        color: #161616;
+                                        color: map-get($colors, secondary);
                                         text-transform: uppercase;
                                         letter-spacing: 0.05em;
                                         margin-left: 1em;
@@ -104,16 +106,13 @@ main {
 
                                         &::before {
                                             content: "\25BA";
-                                            color: black;
+                                            color: map-get($colors, secondary);
                                             transition: all .5s;
                                         }
-
-
                                     }
                                 }
                             }
                         }
-
                     }
                 }
             }

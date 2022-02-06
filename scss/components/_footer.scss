@@ -19,7 +19,7 @@ footer {
                 &:hover {
                     margin: .75em .75em;
                     height: 1.8em;
-                    border-bottom: 1.5px solid #facd49;
+                    border-bottom: 1.5px solid map-get($colors, primary);
                 }
 
             }

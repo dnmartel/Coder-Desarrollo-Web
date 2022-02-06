@@ -1,5 +1,6 @@
 /* Importo variables */
 @import '../base/variables';
+@import '../base/mixins';
 
 /* Inicio Index */
 
@@ -36,7 +37,7 @@ main {
                 cursor: crosshair;
 
                 &:hover {
-                    transform: scale(0.95);
+                    @include transform(scale(0.95));
                 }
 
                 @media only screen and (min-width: 1200px) and (max-width: 1450px) {

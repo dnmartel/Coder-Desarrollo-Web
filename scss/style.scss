@@ -5,6 +5,9 @@
 /* Importo reglas generales */
 
 @import 'base/general';
+@import 'base/mapas';
+@import 'base/extends';
+@import 'base/mixins';
 
 /* Importo secciones */
 
@@ -15,3 +18,4 @@
 @import 'components/clientes';
 @import 'components/sobremi';
 @import 'components/contacto';
+

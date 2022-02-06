@@ -1,4 +1,8 @@
 /* Inicio Sección SobreMi */
+/* Importo mapas / extends */
+@import '../base/mapas';
+@import '../base/extends';
+@import '../base/mixins';
 
 main {
     section {
@@ -47,9 +51,8 @@ main {
                 }
 
                 &.sector2 {
-                    display: flex;
+                    @extend %flex-center;
                     flex-flow: column nowrap;
-                    justify-content: center;
 
                     .selfie {
                         align-self: center;
@@ -71,7 +74,7 @@ main {
                         align-self: center;
                         max-width: 80%;
                         line-height: 1.5em;
-                        color: #353535;
+                        color: map-get($colors, epigraphs);
                         font-weight: 500;
 
                         @media only screen and (min-width: 481px) and (max-width: 967px) {
@@ -130,9 +133,8 @@ main {
 
 
                     p {
-                        display: flex;
+                        @extend %flex-center;
                         flex-flow: column wrap;
-                        justify-content: center;
                         list-style: none;
                         line-height: 2em;
                         margin: 0 1em;
@@ -160,24 +162,24 @@ main {
                         }
 
                         &:nth-child(-n+4):hover {
-                            color: #facd49;
-                            transform: translateY(-1em);
+                            color: map-get($colors, primary);
+                            @include transform(translateY(-1em));
                         }
 
                         @keyframes up-colored {
                             0% {
-                                color: #161616;
-                                transform: translateY(0);
+                                color: map-get($colors, secondary);
+                                @include transform(translateY(0));
                             }
 
                             50% {
-                                color: #facd49;
-                                transform: translateY(-1em);
+                                color: map-get($colors, primary);
+                                @include transform(translateY(-1em));
                             }
 
                             100% {
-                                color: #161616;
-                                transform: translateY(0);
+                                color: map-get($colors, secondary);
+                                @include transform(translateY(0));
                             }
                         }
 

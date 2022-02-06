@@ -1,11 +1,14 @@
 /* HEADER */
+/* Importo mapas */
+@import '../base/mapas';
+
 
 header {
     height: 5em;
     width: 100%;
     font-size: 18px;
     font-weight: 300;
-    background-color: #fff;
+    background-color: map-get($colors, backgrounds);
     position: sticky;
     top: 0;
     /* Sin el z-index, al aplicar transform el efecto "pisa" el header */
@@ -47,7 +50,7 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border: 3px solid #facd49;
+                border: 3px solid map-get($colors, primary);
                 border-radius: .5em;
                 width: 2em;
                 height: 2em;
@@ -71,12 +74,12 @@ header {
                     }
 
                     &~.nav-menu li a {
-                        color: #fff;
+                        color: map-get($colors, backgrounds);
                         display: flex;
                         font-weight: 700;
 
                         &:hover {
-                            color: #facd49;
+                            color: map-get($colors, primary);
                             border-bottom: none;
                         }
                     }
@@ -117,7 +120,7 @@ header {
                 
                 a {
                     color: #161616;
-                    border-bottom: 0px solid #facd49;
+                    border-bottom: 0px solid map-get($colors, primary);
                     /* Separación inter-links */
                     margin: 0 1.5em;
 
@@ -128,14 +131,14 @@ header {
                     
                     &:hover {
                         /* Hover links navbar */
-                        color: #facd49;
-                        border-bottom: 1.5px solid #facd49;
+                        color: map-get($colors, primary);
+                        border-bottom: 1.5px solid map-get($colors, primary);
                     }
 
                     
                     &.active-page {
                         /* Destaco la página activa */
-                        color: #facd49;
+                        color: map-get($colors, primary);
                     }
 
                 }
