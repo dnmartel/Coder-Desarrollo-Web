@@ -4,19 +4,41 @@ main {
     &.main-clientes {
         section {
             div {
+
+                /* Aplico filtros */
                 .grayscale-filter {
                     filter: grayscale(100%);
                     transition: all 0.5s;
 
+                    /* y se lo saco en hover */
                     &:hover {
                         filter: none;
                     }
-
                 }
+
+                /* Bordes al hacer hover */
+                .border-rnd {
+                    transition: all 0.5s;
+                    border-radius: 5px;
+                    border: 1px solid map-get($colors, backgrounds);
+
+                    @media only screen and (min-width: 481px) and (max-width: 960px) {
+                        border: 1px solid transparent;
+                    }
+
+                    &:hover {
+                        border: 1px solid map-get($colors, epigraphs);
+
+                        @media only screen and (min-width: 481px) and (max-width: 960px) {
+                            border: 1px solid transparent;
+                        }
+                    }
+                }
+
 
                 .opacity-filter {
                     transition: all 0.5s;
-                    filter: opacity(75%);
+                    filter: opacity(70%);
 
                     &:hover {
                         filter: none;

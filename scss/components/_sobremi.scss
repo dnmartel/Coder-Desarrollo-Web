@@ -13,6 +13,7 @@ main {
             grid-template: 3fr 1fr / 1fr 1fr;
             row-gap: 5em;
 
+            /* Mucha mq en este scss */
             @media only screen and (max-width: 480px) {
                 width: 100%;
                 grid-template: 1fr / 1fr;
@@ -27,6 +28,8 @@ main {
             }
 
             div {
+
+                /* El div está dividido en una grilla, con 4 sectores */
                 &.sector1 {
                     figcaption {
                         margin-top: .5em;
@@ -49,7 +52,7 @@ main {
                         justify-content: center;
                     }
                 }
-
+                /* Aplicando extend */
                 &.sector2 {
                     @extend %flex-center;
                     flex-flow: column nowrap;
@@ -188,7 +191,6 @@ main {
                         }
                     }
                 }
-
 
             }
         }

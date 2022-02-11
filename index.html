@@ -6,15 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Link Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     <!-- Meta tag -->
-    <meta name="description" content="Diseñadora grafica digital trabajando desde Buenos Aires para el mundo. Me enfoco en diseño web, marketing digital, apps, UX/UI, redes sociales, multimedia y branding.">
+    <meta name="description"
+        content="Diseñadora grafica digital trabajando desde Buenos Aires para el mundo. Me enfoco en diseño web, marketing digital, apps, UX/UI, redes sociales, multimedia y branding.">
 
     <!-- KW -->
-    <meta name="keywords" content="Diseño web, marketing digital, apps, UX, UI, redes sociales, rrss, multimedia, branding, proyectos, Playstation, roby, taragui, wildfi, behance, diseño grafico, portfolio, web">
+    <meta name="keywords"
+        content="Diseño web, marketing digital, apps, UX, UI, redes sociales, rrss, multimedia, branding, proyectos, Playstation, roby, taragui, wildfi, behance, diseño grafico, portfolio, web">
 
     <!-- OpenGraph -->
     <meta property="og:title" content="Inicio - DaiFza - Diseñadora gráfica digital">
-    <meta property="og:description" content="Diseñadora grafica digital trabajando desde Buenos Aires para el mundo. Me enfoco en diseño web, marketing digital, apps, UX/UI, redes sociales, multimedia y branding.">
+    <meta property="og:description"
+        content="Diseñadora grafica digital trabajando desde Buenos Aires para el mundo. Me enfoco en diseño web, marketing digital, apps, UX/UI, redes sociales, multimedia y branding.">
     <meta property="og:image" content="">
 
     <!-- FAVICON -->
@@ -55,18 +61,73 @@
         </div>
     </header>
     <main class="main-carrousel">
-        <div class="carrousel">
-            <!-- Acá también iría un selector, representado por puntitos en el Wireframe - para esto necesitaria JS -->
-            <img src=" ./img/slide1.png" alt="Imagen para cliente Playstation, dirección de arte">
-            <img src="./img/slide2.png" alt="Imagen para cliente Unión, diseño de piezas digitales">
-            <img src="./img/slide3.png" alt="Imagen para cliente Roby, finalización de piezas digitales">
-            <img src="./img/slide4.png" alt="Imagen para aplicación Meeti">
+
+
+        <div class="swiper carrousels">
+            <!-- Swiper -->
+
+            <!-- Botones, descomentar para activar (tambien en el css _index.scss Linea 72) -->
+            <!-- <div class="swiper-button-next" id="btn-swp-left"></div>
+            <div class="swiper-button-prev" id="btn-swp-right"></div> -->
+
+            <!-- SCROLL ICON PARA MOBILE -->
+            <div class='icon-scroll'></div>
+
+            <!-- PAGINATION -->
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper sone">
+                    <!-- 
+                    <div class="swiper-slide slide1"></div>
+                    <div class="swiper-slide slide2"></div>
+                    <div class="swiper-slide slide3"></div> -->
+                    <img class="swiper-slide" src=" ./img/slide1.png"
+                        alt="Imagen para cliente Playstation, dirección de arte">
+                    <img class="swiper-slide" src="./img/slide2.png"
+                        alt="Imagen para cliente Unión, diseño de piezas digitales">
+                    <img class="swiper-slide" src="./img/slide3.png"
+                        alt="Imagen para cliente Roby, finalización de piezas digitales">
+                </div>
+            </div>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper stwo">
+                    <img class="swiper-slide" src="./img/slide4.png" alt="Imagen para aplicación Meeti">
+                    <img class="swiper-slide" src=" ./img/slide5.png" alt="Imagen para cliente brahma">
+                    <img class="swiper-slide" src="./img/slide6.png" alt="Imagen para cliente corona">
+                </div>
+            </div>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper sthr">
+                    <img class="swiper-slide" src=" ./img/slide7.png"
+                        alt="Imagen para cliente Playstation, dirección de arte">
+                    <img class="swiper-slide" src="./img/slide8.png"
+                        alt="Imagen para cliente Unión, diseño de piezas digitales">
+                    <img class="swiper-slide" src="./img/slide1.png"
+                        alt="Imagen para cliente Roby, finalización de piezas digitales">
+                </div>
+            </div>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper sfou">
+                    <img class="swiper-slide" src="./img/slide2.png" alt="Imagen para cliente la merced">
+                    <img class="swiper-slide" src="./img/slide3.png" alt="Imagen para cliente taragui">
+                    <img class="swiper-slide" src="./img/slide4.png" alt="Imagen para cliente Playstation">
+
+                </div>
+            </div>
         </div>
+
+
+
     </main>
+
 
     <footer>
         <div>
-            <a href="https://behance.net">
+            <a href="https://www.behance.net/daifiorenza">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-behance"
                     viewBox="0 0 24 24" stroke-width="1.5" stroke="#facd49" fill="none" stroke-linecap="round"
                     stroke-linejoin="round">
@@ -77,7 +138,7 @@
                     <line x1="16" y1="6" x2="19" y2="6" />
                 </svg>
             </a>
-            <a href="https://linkedin.com">
+            <a href="https://www.linkedin.com/in/daifiorenza/">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin"
                     viewBox="0 0 24 24" stroke-width="1.5" stroke="#facd49" fill="none" stroke-linecap="round"
                     stroke-linejoin="round">
@@ -92,6 +153,34 @@
         </div>
         <p class="p-footer">Todos los derechos reservados</p>
     </footer>
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        let labels = ['01', '02', '03'];
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            direction: "vertical",
+            keyboard: true,
+            loop: true,
+            speed: 1000,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<div class="' + className + '">' + '<span>' + (labels[index]) +
+                        '</span>' + '</div>';
+                },
+            }
+
+        });
+    </script>
 
 </body>
 

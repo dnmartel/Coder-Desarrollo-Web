@@ -1,6 +1,7 @@
 /* Importo variables */
 @import '../base/variables';
 @import '../base/mixins';
+@import '../base/mapas';
 
 /* Inicio Index */
 
@@ -15,7 +16,10 @@ main {
             margin: 6em 0;
         }
 
-        .carrousel {
+        /* Contenedor del carrousel múltiple, necesario para el plugin swiper */
+        .carrousels {
+            overflow: visible;
+            margin-top: 2em;
             width: 90%;
             display: flex;
             flex-flow: row wrap;
@@ -23,35 +27,191 @@ main {
             align-self: center;
             justify-content: space-evenly;
 
-            @media only screen and (max-width: 968px) {
-                width: 95%;
+
+            @media only screen and (max-width: 748px) {
+
+                .icon-scroll,
+                .icon-scroll:before {
+                    position: absolute;
+                    left: 50%;
+                    top: -3%;
+                }
+
+                .icon-scroll {
+                    width: 40px;
+                    height: 70px;
+                    margin-left: -20px;
+                    margin-top: -35px;
+                    box-shadow: inset 0 0 0 1px map-get($colors, primary);
+                    border-radius: 25px;
+                }
+
+                .icon-scroll:before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    background: map-get($colors, primary);
+                    margin-left: -4px;
+                    top: 8px;
+                    border-radius: 4px;
+                    animation-duration: 1.5s;
+                    animation-iteration-count: infinite;
+                    animation-name: scroll;
+
+
+                    @keyframes scroll {
+                        0% {
+                            opacity: 1;
+                        }
+
+                        100% {
+                            opacity: 0;
+                            transform: translateY(46px);
+                        }
+                    }
+                }
+
+
+            }
+
+            @media only screen and (max-width: 1199px) {
+                width: 75%;
             }
 
             @media only screen and (min-width: 1200px) and (max-width: 1650px) {
-                width: 95%;
+                width: 85%;
             }
 
-            img {
-                height: $size-img-carrousel;
-                transition: all 0.5s;
-                cursor: crosshair;
+        }
 
-                &:hover {
-                    @include transform(scale(0.95));
+        /* Bullet container del slider */
+        .swiper-pagination {
+            position: absolute;
+            left: -4em;
+            top: 50%;
+
+            /* Lo oculto en mobile */
+            @media (max-width: 600px) {
+                display: none;
+            }
+
+        }
+
+        /* Bullet */
+        .swiper-pagination-bullet {
+            background: map-get($colors, secondary);
+            width: .15em;
+            height: 4em;
+            margin-top: -.4em;
+            border-radius: 0;
+            color: map-get($colors, secondary);
+            transition: opacity 1s ease;
+            display: flex;
+            align-items: center;
+
+            span {
+                margin-left: .8em;
+                font-family: 'PT Mono', monospace;
+                font-size: .8em;
+            }
+        }
+
+
+        /* Botones, descomentar para activar */
+        /* #btn-swp-left {
+                position: absolute;
+                left: -1em;
+                top: 45%;
+
+                @media only screen and (max-width: 968px) {
+                    display: none;
                 }
 
-                @media only screen and (min-width: 1200px) and (max-width: 1450px) {
+                &:after {
+                    content: "\25B2";
+                    color: map-get($colors, secondary);
+                    transform: scale(0.4);
+                    margin-right: 1em;
 
-                    height: 420px;
+                }
+            }
+
+            #btn-swp-right {
+                position: absolute;
+                left: -1em;
+                top: 55%;
+
+                @media only screen and (max-width: 968px) {
+                    display: none;
                 }
 
-                @media only screen and (min-width: 1450px) and (max-width: 1650px) {
-                    height: 450px;
+                &:after {
+                    content: "\25BC";
+                    color: map-get($colors, secondary);
+                    transform: scale(0.4);
+                    margin-right: 1em;
+                }
+            } */
+
+        /* Estilo de cada slider (son 4, uno por columna) */
+        .mySwiper {
+            height: $size-img-carrousel;
+            width: 400px;
+            border-radius: .2em;
+            cursor: crosshair;
+
+            .sone {
+                transition-delay: .1s;
+            }
+
+            .stwo {
+                transition-delay: .2s;
+            }
+
+            .sthr {
+                transition-delay: .3s;
+            }
+
+            .sfou {
+                transition-delay: .4s;
+            }
+
+            @media screen and (min-width: 1200px) and (max-width: 1650px) {
+                height: calc($size-img-carrousel - $size-img-carrousel*0.1);
+                width: calc($size-img-carrousel-w - $size-img-carrousel-w*0.25);
+            }
+
+            @media screen and (min-width:601px) and (max-width: 1199px) {
+                height: calc($size-img-carrousel - $size-img-carrousel*0.2);
+                width: calc($size-img-carrousel-w - $size-img-carrousel-w*0.3);
+
+            }
+
+            @media screen and (max-width:600px) {
+                height: calc($size-img-carrousel - $size-img-carrousel*0.3);
+                width: calc($size-img-carrousel-w - $size-img-carrousel-w*0.3);
+                /* Todo esto podría ser calculado como= valorInicial * 0.7 , pero ya loo habia armado así, queda como aprendizaje */
+            }
+
+            .swiper-wrapper {
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    transition: all 1.75s cubic-bezier(.23, .84, .35, .96);
                 }
 
+                .swiper-slide {
+
+                    &.swiper-slide-active,
+                    &.swiper-slide-duplicate-active {
+                        @include transform(scale3d(1.15, 1.15, 1.15));
+                    }
+                }
             }
         }
     }
 }
+
 
 /* Fin Index */

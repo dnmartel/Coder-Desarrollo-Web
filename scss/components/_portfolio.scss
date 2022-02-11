@@ -11,6 +11,7 @@ main {
             align-items: center;
             gap: 2em;
 
+            /* Ordeno en filas, prodría hacerlo con grid, pero prefiero mixear para practicar*/
             div {
                 &.filas {
                     display: flex;
@@ -22,10 +23,12 @@ main {
                     article {
                         position: relative;
 
+                        /* Tamaño de imagen, pre sass */
                         img {
                             width: 545px;
                             height: 560px;
                             object-fit: cover;
+                            border-radius: .2em;
 
                             &.pro1,
                             &.pro2,
@@ -33,6 +36,7 @@ main {
                             &.pro4,
                             &.pro5,
                             &.pro6 {
+                                /* Hover de imagenes */
                                 &:hover {
 
                                     &~.div-pro1,
@@ -73,9 +77,10 @@ main {
                                 width: 80%;
                                 display: flex;
                                 flex-direction: column;
-                                transition: all 0.25s;
+                                transition: all 0.5s ease;
                                 filter: opacity(0%);
 
+                                /* Más ajustes del hover */
                                 &:hover {
                                     filter: opacity(100%);
                                 }
@@ -101,9 +106,9 @@ main {
 
                                         &:hover {
                                             margin-right: .15em;
-                                            letter-spacing: 0.08em;
+                                            letter-spacing: 0.065em;
                                         }
-
+                                        /* Agrego "miscelaneas" antes del texto */
                                         &::before {
                                             content: "\25BA";
                                             color: map-get($colors, secondary);
