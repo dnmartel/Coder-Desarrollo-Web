@@ -28,6 +28,31 @@
     <link rel="stylesheet" href="css/style.css">
 
     <title>Contacto - DaiFza - Diseñadora gráfica digital</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('LZ_Q6Qun2rbqYzQOY');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_gj262it', 'template_3dnfa2f', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        window.location.href = "https://dnmartel.github.io/Coder-Desarrollo-Web/index.html"
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -67,24 +92,25 @@
         </div>
 
         <section class="ancho-formulario container mt-3">
-            <form class="row g-3 d-flex justify-content-between">
+            <form class="row g-3 d-flex justify-content-between" id="contact-form">
                 <div class="col-6">
-                    <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+                    <input type="hidden" name="contact_number">
+                    <input type="text" class="form-control" name="user_name" placeholder="Nombre" aria-label="First name" required>
                 </div>
                 <div class="col-6">
-                    <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
+                    <input type="text" class="form-control" name="user_lastname" placeholder="Apellido" aria-label="Last name">
                 </div>
                 <div class="col-12">
-                    <input type="email" class="form-control" placeholder="Email" id="inputEmail4">
+                    <input type="email" class="form-control" name="user_email" placeholder="Email" id="inputEmail4" required>
                 </div>
                 <div class="col-12 mb-3">
-                    <textarea class="form-control" id="validationTextarea" placeholder="Mensaje" required></textarea>
+                    <textarea class="form-control" id="validationTextarea" name="message" placeholder="Mensaje" required></textarea>
                     <div class="invalid-feedback">
                         Escribi un mensaje en el área de texto.
                     </div>
                 </div>
                 <div class="col-12 form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" required>
                     <label class="form-check-label" for="gridCheck">
                         Acepto términos y condiciones.
                     </label>
